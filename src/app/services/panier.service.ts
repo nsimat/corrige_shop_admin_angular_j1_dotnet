@@ -51,8 +51,7 @@ export class PanierService {
     this._cartItems.update((list) => {
       return list
         .map((ct) =>
-          ct.product.id === cartItem.product.id ? { ...ct, quantity: ct.quantity - 1 } : ct,
-        )
+          ct.product.id === cartItem.product.id ? { ...ct, quantity: ct.quantity - 1 } : ct)
         .filter((ct) => ct.quantity > 0); // Si la quantité descend à 0, je supprime l'article de la liste.
     });
   }
